@@ -3,7 +3,8 @@
 	<header> 
 	</header>
 <body>
-	<h3>Result</h3>
+	<h3>Four Arithmetic Operations Quiz</h3>
+	
 	<c:if test="${not empty formulars}">
 		<table>
 			<c:forEach var="formular" items="${formulars}">
@@ -12,16 +13,17 @@
 						<td>${formular.firstParam} ${formular.operator.value} ${formular.secondParam}</td>
 						<td>=</td>
 						<td>${formular.answer}</td>
-						<td>
+						
 							<c:choose>
 							      <c:when test="${formular.correct == true}">
-							      		<p>correct</p>
+							      		<td><p>correct</p></td>
+							      		<td><p><input type="checkbox" checked="checked" disabled="disabled"/> </p></td>
 							      </c:when>
 							      <c:otherwise>
-							      		<p>wrong</p>
+							      		<td><p>wrong</p></td>
+							      		<td><p><input type="checkbox" disabled="disabled"/></p></td>
 							      </c:otherwise>
 							</c:choose>
-						</td>
 					</tr>
 
 			</c:forEach>
