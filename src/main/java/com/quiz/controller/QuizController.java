@@ -16,7 +16,7 @@ import com.quiz.model.Operator;
 import com.quiz.util.Utils;
 
 @Controller
-@RequestMapping("/quiz")
+@RequestMapping("/")
 public class QuizController {
 
 	@RequestMapping(method = RequestMethod.GET)
@@ -25,7 +25,7 @@ public class QuizController {
 		List<Formular> list = new ArrayList<Formular>();
 		Random randomGenerator = new Random();
 
-		for (int idx = 1; idx <= 10; ++idx) {
+		for (int i = 1; i <= 10; i++) {
 
 			int randomInt1 = randomGenerator.nextInt(100);
 			int randomInt2 = randomGenerator.nextInt(100);
@@ -43,7 +43,7 @@ public class QuizController {
 		return "show";
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "/quiz", method = RequestMethod.POST)
 	public String result(HttpServletRequest request, ModelMap model) {
 
 		String[] firstParams = request.getParameterValues("firstParam");
@@ -58,9 +58,17 @@ public class QuizController {
 		for (String result : results) {
 			
 			Formular formular = new Formular(Integer.valueOf(firstParams[i]), Integer.valueOf(secondParams[i]), Operator.getEnum(operators[i]));
-			formular.setAnswer(Integer.valueOf(result));
 			
-			formular.setCorrect(formular.getActualResult() == formular.getAnswer());
+			if (!result.isEmpty()) {
+				
+				formular.setAnswer(Integer.valueOf(result));
+			
+				formular.setCorrect(formular.getActualResult() == formular.getAnswer());
+				
+			} else {
+				
+				formular.setCorrect(false);
+			}
 			
 			if (formular.isCorrect()) {
 				score ++;

@@ -7,7 +7,7 @@ public class Formular {
 	private int firstParam;
 	private int secondParam;
 	private Operator operator;
-	private int answer;
+	private Integer answer;
 	private boolean correct;
 	
 	public Formular() {}
@@ -54,11 +54,11 @@ public class Formular {
 		return Utils.getResult(firstParam, secondParam, operator);
 	}
 
-	public int getAnswer() {
+	public Integer getAnswer() {
 		return answer;
 	}
 
-	public void setAnswer(int answer) {
+	public void setAnswer(Integer answer) {
 		this.answer = answer;
 	}
 }

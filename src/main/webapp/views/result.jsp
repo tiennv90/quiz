@@ -1,7 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 	<header> 
-
 	</header>
 <body>
 	<h3>Result</h3>
@@ -28,7 +27,7 @@
 			</c:forEach>
 			<tr><td colspan="3">Your score: ${score} </td></tr>
 			<tr>
-				<td colspan="3"><a href="/quiz"> Make another quiz </a>
+				<td colspan="3"><a href="/"> Make another quiz </a>
 				</td>
 			</tr>
 		</table>
