@@ -1,6 +1,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
-<header> </header>
+	<header> 
+
+	</header>
 <body>
 	<h3>Result</h3>
 	<c:if test="${not empty formulars}">
