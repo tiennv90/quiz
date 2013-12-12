@@ -19,6 +19,7 @@
 							      <c:when test="${formular.correct == true}">
 							      		<td>correct</td>
 							      		<td><input type="checkbox" checked="checked" disabled="disabled"/></td>
+							      		<td></td>
 							      </c:when>
 							      <c:otherwise>
 							      		<td>wrong</td>
