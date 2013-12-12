@@ -14,30 +14,30 @@
 		</script>
 	</header>
 <body>
-	<h3>Four Arithmetic Operations Quiz</h3>
-
+<div class="container">
+	<jsp:include page="header.jsp"/>
+	<section class="round">
 	<c:if test="${not empty list}">
 		<form action="/quiz" method="post">
 			<table>
 				<c:forEach var="formular" items="${list}">
-
-					<input type="hidden" name="firstParam" value="${formular.firstParam}">
-					<input type="hidden" name="operator" value="${formular.operator.value}">
-					<input type="hidden" name="secondParam" value="${formular.secondParam}">
 					<tr>
-						<td>${formular.firstParam} ${formular.operator.value} ${formular.secondParam}  </td>
+						<td>
+							${formular.firstParam} ${formular.operator.value} ${formular.secondParam} 
+							<input type="hidden" name="firstParam" value="${formular.firstParam}">
+							<input type="hidden" name="operator" value="${formular.operator.value}">
+							<input type="hidden" name="secondParam" value="${formular.secondParam}">
+						</td>
 						<td> = </td>
 						<td><input name="result" type="text" size="10px" onkeypress="return isNumberKey(event);"/></td>
 					</tr>
 
 				</c:forEach>
-				<tr>
-					<td colspan="3"><input type="submit" value="Submit Button" />
-					</td>
-				</tr>
 			</table>
+			<input type="submit" value="Submit Button" />
 		</form>
 	</c:if>
-
+	</section>
+</div>
 </body>
 </html>

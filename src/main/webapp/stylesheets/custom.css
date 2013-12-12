@@ -1,0 +1,55 @@
+.container {
+	width: 710px;
+}
+
+body {
+	background: #cff;
+}
+
+header {
+	padding-top: 20px;
+	text-align:center;
+}
+
+
+section {
+	margin-top: 1cm;
+	font-size: 120%;
+	padding: 20px;
+	background: #FFFFFF;
+}
+
+/* links */
+
+a {
+	color: #09c;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #069;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #069;
+}
+
+/* Navigation */
+
+nav {
+	float: right;
+	background: white;
+	padding: 0 0.7cm;
+	white-space: nowrap;
+}
+
+
+/* Round corners */
+
+.round {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+

@@ -8,6 +8,7 @@ public class Formular {
 	private int secondParam;
 	private Operator operator;
 	private Integer answer;
+	private Integer actualScore;
 	private boolean correct;
 	
 	public Formular() {}
@@ -51,7 +52,15 @@ public class Formular {
 	}
 
 	public int getActualResult() {
-		return Utils.getResult(firstParam, secondParam, operator);
+		return actualScore;
+	}
+	
+	public Integer getActualScore() {
+		return actualScore;
+	}
+
+	public void setActualScore(Integer actualScore) {
+		this.actualScore = actualScore;
 	}
 
 	public Integer getAnswer() {

@@ -58,6 +58,7 @@ public class QuizController {
 		for (String result : results) {
 			
 			Formular formular = new Formular(Integer.valueOf(firstParams[i]), Integer.valueOf(secondParams[i]), Operator.getEnum(operators[i]));
+			formular.setActualScore(Utils.getResult(formular.getFirstParam(), formular.getSecondParam(), formular.getOperator()));
 			
 			if (!result.isEmpty()) {
 				
